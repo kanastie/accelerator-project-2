@@ -1,0 +1,97 @@
+.tours__shadow {
+  font-family: $montserrat;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 800;
+  color: $base-dark;
+  opacity: 3%;
+
+  @media (min-width: $tablet) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 55px;
+    line-height: 55px;
+  }
+}
+
+.tours__title {
+  font-family: $montserrat;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  color: $base-dark;
+
+  @media (min-width: $tablet) {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
+.tours__features-item {
+  font-family: $montserrat;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
+  color: $base-white;
+}
+
+.tours__headline {
+  font-family: $montserrat;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: $base-dark;
+}
+
+.tours__term {
+  font-family: $montserrat;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 300;
+  color: $base-white;
+}
+
+.tours__description {
+  font-family: $montserrat;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 700;
+  color: $base-white;
+}
+
+.tours__link {
+  font-family: $montserrat;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  color: $base-dark;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.tours__link:hover {
+  color: $accent-blue;
+  opacity: 10%;
+}
+
+.tours__link:focus-visible {
+  color: $accent-blue;
+  outline: none;
+}
+
+.tours__link:active {
+  color: $hover;
+}
+
+.tours__link:disabled {
+  color: $disabled;
+}

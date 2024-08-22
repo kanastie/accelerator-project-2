@@ -1,0 +1,107 @@
+.form h2 {
+  font-family: $montserrat;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  color: $base-white;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
+.form p {
+  font-family: $montserrat;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $base-white;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.form__input[type="number"]::-webkit-outer-spin-button,
+.form__input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.form__input {
+  padding: 18px 30px;
+
+  font-family: $montserrat;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  color: $base-dark;
+  opacity: 50%;
+
+  border: 1px solid rgba(2, 102, 193, 0.1);
+}
+
+.form__input::placeholder {
+  color: rgba(2, 102, 193, 0.5);
+}
+
+.form__input:hover {
+  border: 1px solid $accent-blue;
+}
+
+.form__input:focus-visible {
+  border: 1px solid $base-dark;
+  outline: none;
+}
+
+.form__input:disabled {
+  border: 1px solid $disabled;
+}
+
+.form__button {
+  display: block;
+  padding: 19px 20px;
+  box-sizing: border-box;
+
+  font-family: $montserrat;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: $base-white;
+  text-align: center;
+  text-decoration: none;
+
+  border: 1px solid $accent-blue;
+  background-color: $accent-blue;
+}
+
+.form__button:hover {
+  color: $hover;
+  border: 1px solid $hover;
+  background-color: $base-white;
+}
+
+.form__button:focus-visible {
+  color: $hover;
+  outline: none;
+  border: 1px solid $base-white;
+  background-color: $base-white;
+}
+
+.form__button:active {
+  color: $base-white;
+  border: 1px solid $hover;
+  background-color: $hover;
+}
+
+.form__button:disabled {
+  opacity: $disabled;
+}

@@ -1,0 +1,40 @@
+.header--wrapper {
+  background-color: $accent-blue;
+}
+
+.header__link {
+  font-family: $montserrat;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: $base-white;
+
+  text-decoration: none;
+
+  @media (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.header__link:hover {
+  opacity: 50%;
+}
+
+.header__link:focus-visible {
+  color: $base-dark;
+  outline: none;
+}
+
+.header__link:active {
+  color: $hover;
+}
+
+.header__link:disabled {
+  color: $disabled;
+}
