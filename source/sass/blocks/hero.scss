@@ -1,0 +1,78 @@
+.hero__slide h2 {
+  font-family: $montserrat;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 800;
+  color: $base-white;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 56px;
+    line-height: 56px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 77px;
+    line-height: 77px;
+    text-align: left;
+  }
+}
+
+.hero__slide p {
+  font-family: $montserrat;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $base-white;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
+}
+
+.hero__link {
+  display: block;
+  width: 180px;
+  padding: 19px 20px;
+  box-sizing: border-box;
+
+  font-family: $montserrat;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: $base-white;
+  text-align: center;
+  text-decoration: none;
+
+  border: 1px solid $accent-blue;
+  background-color: $accent-blue;
+}
+
+.hero__link:hover {
+  color: $hover;
+  border: 1px solid $hover;
+  background-color: $base-white;
+}
+
+.hero__link:focus-visible {
+  color: $hover;
+  outline: none;
+  border: 1px solid $base-white;
+  background-color: $base-white;
+}
+
+.hero__link:active {
+  color: $base-white;
+  border: 1px solid $hover;
+  background-color: $hover;
+}
+
+.hero__link:disabled {
+  background-color: $disabled;
+}
