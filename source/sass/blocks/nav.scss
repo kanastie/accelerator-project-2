@@ -1,12 +1,72 @@
+.nav__toggle {
+  position: absolute;
+
+  width: 26px;
+  height: 26px;
+  top: 15px;
+  left: 15px;
+
+  @media (min-width: $tablet) {
+    top: 28px;
+    left: 45px;
+  }
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
 .nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (width >= 320px) and (width <= 767px) {
+    padding: 15px 15px 50px;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 104px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    background-color: $accent-blue;
+  }
+
+  @media (width >= 768px) and (width <= 1439px) {
+    padding: 30px 45px 70px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 81px;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    background-color: $accent-blue;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    gap: 20px;
+  }
+
+  &--secondary {
+    padding: 0;
+    width: auto;
+    position: static;
+    gap: 15px;
+    background-color: $base-white;
+  }
 }
 
 .nav__link {
-  padding: 2px 5px;
-
   font-family: $montserrat;
   font-size: 14px;
   line-height: 14px;
@@ -17,26 +77,36 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
-  border: 1px solid $accent-blue;
-
   @media (min-width: $tablet) {
     font-size: 16px;
     line-height: 16px;
   }
 
   @media (min-width: $desktop) {
+    padding: 2px 5px;
+
+    font-family: $montserrat;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
     text-transform: none;
     letter-spacing: normal;
+
+    border: 1px solid $accent-blue;
   }
 }
 
 .nav__link:hover {
-  border-bottom: 1px solid $base-white;
+  @media (min-width: $desktop) {
+    border-bottom: 1px solid $base-white;
+  }
 }
 
 .nav__link:focus-visible {
-  border: 1px solid $base-white;
-  outline: none;
+  @media (min-width: $desktop) {
+    border: 1px solid $base-white;
+    outline: none;
+  }
 }
 
 .nav__link:active {

@@ -1,3 +1,53 @@
+.hero--wrapper {
+}
+
+.hero__slider {
+}
+
+.hero__slide {
+  padding: 40px 15px;
+
+  background-image: url("../../img/hero/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../../img/hero/hero-mobile@2x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../../img/hero/hero-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/hero/hero-tablet@2x.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../../img/hero/hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../../img/hero/hero-desktop@2x.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
 .hero__slide h2 {
   font-family: $montserrat;
   font-size: 26px;
