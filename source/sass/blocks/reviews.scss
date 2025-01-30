@@ -1,4 +1,65 @@
-.reviews__shadow {
+.reviews--wrapper {
+  background-color: $base-white;
+}
+
+.reviews__container {
+  padding-top: 36px;
+  margin: 0 auto;
+  width: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    padding-top: 60px;
+    width: 768px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 145px;
+    width: 1440px;
+  }
+}
+
+.reviews__title {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+  margin-bottom: 17px;
+
+  font-family: $montserrat;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  color: $base-dark;
+
+  @media (min-width: $tablet) {
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-bottom: 10px;
+
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-bottom: 0;
+
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
+.reviews__title::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  z-index: 0;
+
   font-family: $montserrat;
   font-size: 26px;
   line-height: 26px;
@@ -7,53 +68,141 @@
   opacity: 3%;
 
   @media (min-width: $tablet) {
+    top: -15px;
+    left: 45px;
+
     font-size: 40px;
     line-height: 40px;
   }
 
   @media (min-width: $desktop) {
+    top: -18px;
+    left: 120px;
+
     font-size: 55px;
     line-height: 55px;
   }
 }
 
-.reviews__title {
-  font-family: $montserrat;
-  font-size: 22px;
-  line-height: 22px;
-  font-weight: 800;
-  color: $base-dark;
+.reviews__swiper-wrapper {
+  padding: 15px 15px 20px;
 
   @media (min-width: $tablet) {
-    font-size: 25px;
-    line-height: 25px;
+    position: relative;
+    padding: 25px 45px 40px;
   }
 
   @media (min-width: $desktop) {
-    font-size: 35px;
-    line-height: 35px;
+    padding: 38px 130px 87px;
   }
 }
 
-.about h3 {
-  font-family: $montserrat;
-  font-size: 12px;
-  line-height: 12px;
-  font-weight: 700;
-  color: $base-dark;
+.reviews .reviews__swiper {
+  padding: 15px 15px 20px;
+  margin: -15px -15px -20px;
 
   @media (min-width: $tablet) {
-    font-size: 18px;
-    line-height: 18px;
+    padding: 25px 45px 40px;
+    margin: -25px -45px -40px;
   }
 
   @media (min-width: $desktop) {
-    font-size: 21px;
-    line-height: 21px;
+    padding: 38px 130px 87px;
+    margin: -38px -130px -87px;
+    width: 1320px;
   }
 }
 
-.reviews__slide p {
+.reviews .reviews__swiper-container {
+  @media (min-width: $tablet) {
+    width: 565px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 700px;
+  }
+}
+
+.reviews .reviews__swiper .reviews__swiper-slide {
+  box-shadow: 0 0 20px 0 rgba(28, 51, 116, 0.1);
+}
+
+.reviews__swiper-inner {
+  padding: 20px;
+  width: 250px;
+  min-height: 444px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background-color: $base-white;
+
+  @media (min-width: $tablet) {
+    padding: 20px 30px 20px 20px;
+    width: 515px;
+    min-height: 237px;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 20px 40px 20px 20px;
+    width: 640px;
+    min-height: 253px;
+    align-items: flex-start;
+  }
+}
+
+.reviews__img img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  background-color: #c8cad5;
+
+  @media (min-width: $tablet) {
+    width: 186px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 258px;
+  }
+}
+
+.reviews__inner {
+  min-height: 255px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (min-width: $tablet) {
+    width: 299px;
+    min-height: 237px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-bottom: 10px;
+    width: 352px;
+    min-height: 253px;
+  }
+}
+
+.reviews__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reviews__swiper-slide p {
+  margin: 0;
+
   font-family: $montserrat;
   font-size: 12px;
   line-height: 18px;
@@ -66,10 +215,125 @@
   }
 }
 
-.reviews__slide span {
+.reviews__name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 6px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 8px;
+  }
+}
+
+.reviews__swiper-slide h3 {
+  margin: 0;
+
+  font-family: $montserrat;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  color: $base-dark;
+
+  @media (min-width: $tablet) {
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+
+.reviews__swiper-slide span {
   font-family: $montserrat;
   font-size: 12px;
   line-height: 12px;
   font-weight: 300;
   color: $base-dark;
+}
+
+.reviews__swiper-pag {
+  @media (width <= 767px) {
+    display: none;
+  }
+
+  @media (min-width: $tablet) {
+    position: absolute;
+    top: -60px;
+    right: 40px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (min-width: $desktop) {
+    right: 120px;
+  }
+}
+
+.reviews__swiper-pag-btn {
+  padding: 0;
+  width: 35px;
+  height: 33px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: $accent-blue;
+  box-shadow: 0 0 0 1px $accent-blue;
+  cursor: pointer;
+}
+
+.reviews__swiper-pag-btn--next {
+  transform: scaleX(-1);
+}
+
+.reviews__swiper-pag-btn:hover {
+  background-color: transparent;
+  box-shadow: 0 0 0 1px $effect;
+}
+
+.reviews__swiper-pag-btn:hover svg {
+  stroke: $effect;
+}
+
+.reviews__swiper-pag-btn:focus-visible {
+  box-shadow: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.reviews__swiper-pag-btn:focus-visible svg {
+  stroke: $effect;
+}
+
+.reviews__swiper-pag-btn:active {
+  box-shadow: 0 0 0 1px $effect;
+  background-color: $effect;
+}
+
+.reviews__swiper-pag-btn:active svg {
+  stroke: $base-white;
+}
+
+.reviews__swiper-pag-btn:disabled {
+  box-shadow: 0 0 0 1px $disabled;
+  background-color: $disabled;
+  pointer-events: none;
+  cursor: default;
+}
+
+.reviews__swiper-pag-btn:disabled svg {
+  stroke: $base-white;
 }

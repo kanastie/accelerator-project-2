@@ -1,4 +1,96 @@
-.about__shadow {
+.about--wrapper {
+  background-color: $base-white;
+  position: relative;
+}
+
+.about__img {
+  padding-top: 20px;
+
+  @media (min-width: $tablet) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    top: 134px;
+    left: 0;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    top: 0;
+  }
+}
+
+.about__img img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+
+  background-color: #cdc2b9;
+
+  @media (min-width: $tablet) {
+    height: 350px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 498px;
+  }
+}
+
+.about__container {
+  padding: 0 15px 20px;
+  margin: 0 auto;
+  width: 290px;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    padding: 60px 48px 40px 450px;
+    width: 270px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 145px 120px 100px 660px;
+    width: 660px;
+  }
+}
+
+.about h2 {
+  position: relative;
+  margin: 0;
+  margin-bottom: 42px;
+
+  font-family: $montserrat;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  color: $base-dark;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 46px;
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 57px;
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
+.about h2::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -12px;
+  left: 0;
+  z-index: 0;
+
   font-family: $montserrat;
   font-size: 26px;
   line-height: 26px;
@@ -7,35 +99,22 @@
   opacity: 3%;
 
   @media (min-width: $tablet) {
+    top: -15px;
     font-size: 40px;
     line-height: 40px;
   }
 
   @media (min-width: $desktop) {
+    top: -18px;
     font-size: 55px;
     line-height: 55px;
   }
 }
 
-.about__title {
-  font-family: $montserrat;
-  font-size: 22px;
-  line-height: 22px;
-  font-weight: 800;
-  color: $base-dark;
-
-  @media (min-width: $tablet) {
-    font-size: 25px;
-    line-height: 25px;
-  }
-
-  @media (min-width: $desktop) {
-    font-size: 35px;
-    line-height: 35px;
-  }
-}
-
 .about h3 {
+  margin: 0;
+  margin-bottom: 15px;
+
   font-family: $montserrat;
   font-size: 16px;
   line-height: 16px;
@@ -48,12 +127,17 @@
   }
 
   @media (min-width: $desktop) {
+    margin-bottom: 20px;
+
     font-size: 21px;
     line-height: 21px;
   }
 }
 
 .about p {
+  margin: 0;
+  margin-bottom: 15px;
+
   font-family: $montserrat;
   font-size: 14px;
   line-height: 20px;
@@ -61,12 +145,20 @@
   color: $base-dark;
 
   @media (min-width: $tablet) {
+    margin-bottom: 25px;
+
     font-size: 16px;
     line-height: 24px;
   }
 
   @media (min-width: $desktop) {
+    padding-right: 75px;
+
     font-size: 14px;
     line-height: 22px;
   }
+}
+
+.about p:last-child {
+  margin-bottom: 0;
 }

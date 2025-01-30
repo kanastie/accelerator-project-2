@@ -1,4 +1,95 @@
-.training__shadow {
+.training--wrapper {
+  background-color: $base-white;
+  position: relative;
+}
+
+.training--wrapper::after {
+  @media (min-width: $tablet) {
+    content: "";
+    display: block;
+    width: 840px;
+    height: 280px;
+
+    position: absolute;
+    top: 612px;
+    left: 303px;
+    z-index: 1;
+
+    background-image: url("../../img/clouds/clouds-training-tabdesk.png");
+    background-repeat: no-repeat;
+    background-size: 840px 280px;
+    background-position: center;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/clouds/clouds-training-tabdesk@2x.png");
+    }
+  }
+
+  @media (min-width: $desktop) {
+    top: 613px;
+    left: 807px;
+  }
+}
+
+.training__container {
+  padding: 32px 15px 20px;
+  margin: 0 auto;
+  width: 290px;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    padding: 55px 45px 40px;
+    width: 678px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 40px 120px;
+    width: 1200px;
+  }
+}
+
+.training__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 35px;
+  z-index: 1;
+
+  font-family: $montserrat;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 800;
+  color: $base-dark;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 36px;
+
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 38px;
+
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+  &--secondary {
+    @media (min-width: $tablet) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.training__title::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -12px;
+  left: 0;
+  z-index: 0;
+
   font-family: $montserrat;
   font-size: 26px;
   line-height: 26px;
@@ -7,51 +98,25 @@
   opacity: 3%;
 
   @media (min-width: $tablet) {
+    top: -15px;
+
     font-size: 40px;
     line-height: 40px;
   }
 
   @media (min-width: $desktop) {
+    top: -18px;
+
     font-size: 55px;
     line-height: 55px;
   }
 }
 
-.training__title {
-  font-family: $montserrat;
-  font-size: 22px;
-  line-height: 22px;
-  font-weight: 800;
-  color: $base-dark;
-
-  @media (min-width: $tablet) {
-    font-size: 25px;
-    line-height: 25px;
-  }
-
-  @media (min-width: $desktop) {
-    font-size: 35px;
-    line-height: 35px;
-  }
-
-  &--secondary {
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 700;
-
-    @media (min-width: $tablet) {
-      font-size: 18px;
-      line-height: 18px;
-    }
-
-    @media (min-width: $desktop) {
-      font-size: 21px;
-      line-height: 21px;
-    }
-  }
-}
-
 .training p {
+  margin: 0;
+  margin-bottom: 25px;
+  z-index: 1;
+
   font-family: $montserrat;
   font-size: 14px;
   line-height: 20px;
@@ -62,31 +127,428 @@
     font-size: 16px;
     line-height: 24px;
   }
+
+  @media (min-width: $desktop) {
+    padding-right: 380px;
+    margin-bottom: 56px;
+  }
 }
 
-.training__slide h3 {
+.training__swiper-wrapper {
+  @media (min-width: $tablet) {
+    position: relative;
+  }
+}
+
+.training__swiper {
+  margin-bottom: 25px;
+  width: 290px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 25px;
+    width: 678px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 56px;
+    width: 1200px;
+  }
+}
+
+.training__swiper-inner {
+  padding: 15px;
+  width: 260px;
+  min-height: 326px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background-color: $base-white;
+  box-shadow: inset 0 0 0 1px rgba($color: $accent-blue, $alpha: 0.2);
+
+  @media (min-width: $tablet) {
+    width: auto;
+    min-height: 338px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 326px;
+  }
+}
+
+.training__img img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  background-color: #c8cad5;
+}
+
+.training__name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.training__swiper-slide h3 {
+  margin: 0;
+  width: 160px;
+
   font-family: $montserrat;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
   color: $base-dark;
+
+  @media (min-width: $tablet) {
+    width: 140px;
+  }
 }
 
-.training__slide p {
+.training__swiper-slide .training__swiper-inner p {
+  margin: 0;
+
   font-family: $montserrat;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   color: $base-dark;
+
+  @media (min-width: $desktop) {
+    padding-right: 0;
+  }
+}
+
+.training__link {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+  box-sizing: border-box;
+
+  box-shadow: inset 0 0 0 1px rgba($color: $base-dark, $alpha: 0.3);
+
+  cursor: pointer;
+
+  &--disabled {
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba($color: $disabled, $alpha: 1);
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.training__link::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  mask-image: url("/__spritemap#sprite-vk-view");
+  mask-repeat: no-repeat;
+  mask-size: 14px 8px;
+  mask-position: center;
+  background-color: $base-dark;
+}
+
+.training__link--disabled::after {
+  background-color: $disabled;
+}
+
+.training__link:hover {
+  box-shadow: inset 0 0 0 1px rgba($color: $base-dark, $alpha: 1);
+}
+
+.training__link:focus-visible {
+  box-shadow: inset 0 0 1px 2px rgba($color: $base-white, $alpha: 1);
+  outline: none;
+}
+
+.training__link:active {
+  box-shadow: inset 0 0 0 1px rgba($color: $accent-blue, $alpha: 1);
+  background-color: $accent-blue;
+}
+
+.training__link:active::after {
+  background-color: $base-white;
+}
+
+.training__swiper-pag {
+  @media (width <= 767px) {
+    display: none;
+  }
+
+  @media (min-width: $tablet) {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (min-width: $desktop) {
+    top: -87px;
+  }
+}
+
+.training__swiper-pag-btn {
+  padding: 0;
+  width: 35px;
+  height: 33px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: $accent-blue;
+  box-shadow: 0 0 0 1px $accent-blue;
+  cursor: pointer;
+}
+
+.training__swiper-pag-btn--next {
+  transform: scaleX(-1);
+}
+
+.training__swiper-pag-btn:hover {
+  background-color: transparent;
+  box-shadow: 0 0 0 1px $effect;
+}
+
+.training__swiper-pag-btn:hover svg {
+  stroke: $effect;
+}
+
+.training__swiper-pag-btn:focus-visible {
+  box-shadow: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.training__swiper-pag-btn:focus-visible svg {
+  stroke: $effect;
+}
+
+.training__swiper-pag-btn:active {
+  box-shadow: 0 0 0 1px $effect;
+  background-color: $effect;
+}
+
+.training__swiper-pag-btn:active svg {
+  stroke: $base-white;
+}
+
+.training__swiper-pag-btn:disabled {
+  box-shadow: 0 0 0 1px $disabled;
+  background-color: $disabled;
+  pointer-events: none;
+  cursor: default;
+}
+
+.training__swiper-pag-btn:disabled svg {
+  stroke: $base-white;
+}
+
+.training__sub-title {
+  z-index: 1;
+  margin-bottom: 25px;
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 104px;
+
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 23px;
+
+    font-size: 21px;
+    line-height: 21px;
+  }
 }
 
 .training__list {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding: 0;
+  padding-left: 29px;
   list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    justify-items: center;
+    row-gap: 104px;
+    column-gap: 147px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+.training__list::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 183px;
+
+  position: absolute;
+  top: 11px;
+  left: 6px;
+
+  background-color: $accent-blue;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+
+  @media (min-width: $desktop) {
+    display: block;
+    width: calc(1200px - 14px);
+    height: 2px;
+
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 14px;
+  }
+}
+
+.training__item {
+  padding-left: 34px;
+
+  @media (min-width: $tablet) {
+    padding-left: 35px;
+
+    &--forth {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 8px;
+    padding-left: 45px;
+    padding-bottom: 8px;
+    width: calc(253px - 45px);
+
+    &--forth {
+      width: 200px;
+    }
+  }
+
+  &--first,
+  &--second,
+  &--third,
+  &--forth {
+    position: relative;
+  }
+
+  &--first::before,
+  &--second::before,
+  &--third::before,
+  &--forth::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $base-dark;
+
+    @media (min-width: $desktop) {
+      top: 8px;
+      left: 10px;
+    }
+  }
+
+  &--first::before {
+    mask-image: url("/__spritemap#sprite-map-view");
+    mask-size: 24px 24px;
+  }
+
+  &--second::before {
+    mask-image: url("/__spritemap#sprite-boots-view");
+    mask-size: 25px 21px;
+  }
+
+  &--third::before {
+    mask-image: url("/__spritemap#sprite-pine-tree-view");
+    mask-size: 25px 24px;
+  }
+
+  &--forth::before {
+    mask-image: url("/__spritemap#sprite-mountain-view");
+    mask-size: 25px 25px;
+  }
+}
+
+.training__item::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+
+  position: absolute;
+  top: 0;
+  left: -29px;
+
+  border-radius: 50%;
+  background-color: $accent-blue;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+
+  @media (min-width: $desktop) {
+    display: block;
+    top: auto;
+    bottom: -5px;
+    left: 13px;
+  }
+}
+
+.training__item--first::after {
+  @media (min-width: $desktop) {
+    bottom: -29px;
+  }
 }
 
 .training__feature {
+  margin: 0;
+
   font-family: $montserrat;
   font-size: 12px;
   line-height: 18px;

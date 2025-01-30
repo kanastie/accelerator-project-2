@@ -1,4 +1,16 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
+import {toggleMenu, chooseItem} from './menu';
+import {initSwiperHero} from './swiper-hero';
+import {initSwiperTors} from './swiper-tours';
+import {initSwiperTraining} from './swiper-training';
+import {initSwiperReviews} from './swiper-reviews';
+import {initSwiperAdv} from './swiper-adv';
+import {initSwiperGallery} from'./swiper-gallery';
+
+toggleMenu();
+chooseItem();
+initSwiperHero();
+initSwiperTors();
+initSwiperTraining();
+initSwiperReviews();
+initSwiperAdv();
+initSwiperGallery();
