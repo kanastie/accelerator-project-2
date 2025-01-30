@@ -1,10 +1,14 @@
 .nav__toggle {
   position: absolute;
-
   width: 26px;
   height: 26px;
   top: 15px;
   left: 15px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
 
   @media (min-width: $tablet) {
     top: 28px;
@@ -14,6 +18,31 @@
   @media (min-width: $desktop) {
     display: none;
   }
+}
+
+.nav__toggle::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 0;
+  left: 0;
+
+  mask-image: url("/__spritemap#sprite-menu-view");
+  mask-repeat: no-repeat;
+  mask-size: 26px 18px;
+  mask-position: center;
+
+  border: none;
+  background-color: $base-white;
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.nav__toggle:focus-visible {
+  outline-color: transparent;
 }
 
 .nav__list {
@@ -30,7 +59,7 @@
     top: 104px;
     z-index: 1;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 22px;
 
@@ -40,12 +69,13 @@
   @media (width >= 768px) and (width <= 1439px) {
     padding: 30px 45px 70px;
     width: 100%;
+    box-sizing: border-box;
     position: absolute;
     left: 0;
     top: 81px;
     z-index: 1;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 26px;
 
@@ -56,14 +86,11 @@
     display: flex;
     gap: 20px;
   }
+}
 
-  &--secondary {
-    padding: 0;
-    width: auto;
-    position: static;
-    gap: 15px;
-    background-color: $base-white;
-  }
+.nav__list--open {
+  display: flex;
+  z-index: 2;
 }
 
 .nav__link {
@@ -103,54 +130,14 @@
 }
 
 .nav__link:focus-visible {
+  outline-color: transparent;
+
   @media (min-width: $desktop) {
     border: 1px solid $base-white;
-    outline: none;
   }
 }
 
 .nav__link:active {
-  color: $hover;
-}
-
-.nav__link:disabled {
-  color: $disabled;
-}
-
-.nav__link--secondary {
-  padding: 2px 5px;
-
-  font-family: $montserrat;
-  font-size: 14px;
-  line-height: 14px;
-  font-weight: 400;
-  color: $base-dark;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
-
-  border: 1px solid $base-white;
-
-  @media (min-width: $tablet) {
-    font-size: 16px;
-    line-height: 16px;
-  }
-}
-
-.nav__link--secondary:hover {
-  border-bottom: 1px solid $base-dark;
-}
-
-.nav__link--secondary:focus-visible {
-  border: 1px solid $base-dark;
-  outline: none;
-}
-
-.nav__link--secondary:active {
-  color: $accent-blue;
-}
-
-.nav__link--secondary:disabled {
-  color: $disabled;
+  color: $effect;
+  border-bottom: none;
 }

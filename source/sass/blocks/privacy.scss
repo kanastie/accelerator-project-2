@@ -1,8 +1,55 @@
+.privacy--wrapper {
+  padding: 0 15px 20px;
+  margin: 0 auto;
+  width: 290px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    padding: 0 45px 20px;
+    width: 678px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 120px 32px;
+    width: 1200px;
+  }
+}
+
 .privacy p {
+  margin: 0;
+}
+
+.privacy a {
+  padding: 3px 5px;
+  display: block;
+  width: fit-content;
+
   font-family: $montserrat;
   font-size: 12px;
   line-height: 12px;
   font-weight: 300;
   color: $base-dark;
   text-align: center;
+  text-decoration: none;
+}
+
+.privacy a:hover {
+  box-shadow: 0 0 0 1px $base-dark;
+}
+
+.privacy a:focus-visible {
+  box-shadow: 0 0 0 1px $base-dark;
+  outline: none;
+}
+
+.privacy a:active {
+  color: $accent-blue;
+  box-shadow: 0 0 0 1px $base-white;
+}
+
+.privacy a:disabled {
+  color: $disabled;
 }

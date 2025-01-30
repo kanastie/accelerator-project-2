@@ -1,0 +1,123 @@
+.social--wrapper {
+  padding: 0 15px 23px;
+  margin: 0 auto;
+  width: 290px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    padding: 0 45px 34px;
+    width: 678px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 120px 22px;
+    width: 1200px;
+  }
+}
+
+.social__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  gap: 16px;
+
+  @media (min-width: $desktop) {
+    gap: 15px;
+  }
+}
+
+.social__item {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: inset 0 0 0 1px rgba($color: $base-dark, $alpha: 0.3);
+}
+
+.social__link {
+  padding: 15px;
+
+  cursor: pointer;
+
+  &--vk,
+  &--ok,
+  &--reddit,
+  &--disabled {
+    position: relative;
+  }
+
+  &--vk::after,
+  &--ok::after,
+  &--reddit::after,
+  &--disabled::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--vk::after {
+    mask-image: url("/__spritemap#sprite-vk-view");
+    mask-repeat: no-repeat;
+    mask-size: 16px 9px;
+    mask-position: center;
+    background-color: $base-dark;
+  }
+
+  &--ok::after {
+    mask-image: url("/__spritemap#sprite-ok-view");
+    mask-repeat: no-repeat;
+    mask-size: 9px 16px;
+    mask-position: center;
+    background-color: $base-dark;
+  }
+
+  &--reddit::after {
+    mask-image: url("/__spritemap#sprite-reddit-view");
+    mask-repeat: no-repeat;
+    mask-size: 14px 15px;
+    mask-position: center;
+    background-color: $base-dark;
+  }
+
+  &--disabled::after {
+    background-color: $disabled;
+  }
+}
+
+.social__link:hover {
+  box-shadow: inset 0 0 0 1px rgba($color: $base-dark, $alpha: 1);
+}
+
+.social__link:focus-visible {
+  box-shadow: inset 0 0 1px 2px rgba($color: $base-white, $alpha: 1);
+  outline: none;
+}
+
+.social__link:active {
+  box-shadow: inset 0 0 0 1px rgba($color: $accent-blue, $alpha: 1);
+  background-color: $accent-blue;
+}
+
+.social__link--vk:active::after,
+.social__link--ok:active::after,
+.social__link--reddit:active::after {
+  background-color: $base-white;
+}
+
+.social__link--disabled {
+  box-shadow: inset 0 0 0 1px rgba($color: $disabled, $alpha: 1);
+  pointer-events: none;
+  cursor: default;
+}

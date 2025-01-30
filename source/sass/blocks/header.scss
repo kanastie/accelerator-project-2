@@ -3,10 +3,12 @@
 }
 
 .header__container {
+  position: relative;
+  margin: 0 auto;
+
   @media (width >= 320px) and (width <= 767px) {
     padding: 15px;
-    // margin: 0 auto;
-    // width: 290px;
+    width: 290px;
 
     display: flex;
     flex-flow: column;
@@ -28,16 +30,16 @@
 }
 
 .header__nav {
-  @media (width >= 320px) and (width <= 1439px) {
-    display: none;
-    // position: relative;
-  }
-
   @media (min-width: $desktop) {
     display: flex;
     align-items: center;
     order: 1;
   }
+}
+
+.header__logo img {
+  display: block;
+  object-fit: cover;
 }
 
 .header__tel {
@@ -77,7 +79,7 @@
 }
 
 .header__link:hover {
-  opacity: 50%;
+  color: rgba($color: $base-white, $alpha: 0.5);
 }
 
 .header__link:focus-visible {
@@ -86,9 +88,11 @@
 }
 
 .header__link:active {
-  color: $hover;
+  color: $effect;
 }
 
-.header__link:disabled {
+.header__link--disabled {
   color: $disabled;
+  cursor: default;
+  pointer-events: none;
 }

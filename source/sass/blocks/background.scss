@@ -1,0 +1,41 @@
+.background {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background::after {
+  content: "";
+  display: block;
+  width: 346px;
+  height: 595px;
+
+  position: absolute;
+  top: 678px;
+  right: 0;
+
+  background-image: url("../../img/clouds/clouds-tours-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 346px 595px;
+  background-position: center;
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/clouds/clouds-tours-mobile@2x.png");
+  }
+
+  @media (min-width: $tablet) {
+    width: 602px;
+    height: 1630px;
+    top: calc(942px + 82px);
+
+    background-image: url("../../img/clouds/clouds-tours-tabdesk.png");
+    background-size: 602px 1630px;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/clouds/clouds-tours-tabdesk@2x.png");
+    }
+  }
+
+  @media (min-width: $desktop) {
+    top: calc(674px + 126px);
+  }
+}
